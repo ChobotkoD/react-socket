@@ -1,26 +1,27 @@
 import React from "react";
-import Header from "./components/header";
-import img from './png1.png'
-import img1 from './svg1.svg'
+import io from 'socket.io-client';
+import {Tickers} from "./components/tickers";
+
+
 
 const App: React.FC = () =>{
-let a: string = 'dsdsd'
-console.log(a)
-  return (
-    <>
-    <img src={img}/>
-    <img src={img1} style={{width: '100px'}}/>
-      <div
-        onClick={() => {
-          console.log("react works");
-        }}
-      >
-        Hello Wolrd!
-      </div>
+ 
+  const socket = io('http://localhost:4000');
+  socket.on('connect', ()=>{console.log('socket connected')})
+  socket.emit("start", 3000);
 
-      <Header />
+
+  const sockClick = (inter: number) => {
+    socket.emit('offinterval')
+    socket.emit("start", inter)
+  }
+
+ 
+return (
+    <>
+      <Tickers sock={socket} sockClick={sockClick}/>
     </>
   );
 }
 
-export {App};
+export { App };
