@@ -13,11 +13,9 @@ export const TickersSection = styled.section`
     span {
       position: relative;
       bottom: 6px;
-      width: 120px;
       padding: 4px 8px;
-      position: relative;
       color: #fff;
-      background: #ff0000;
+      background: var(--light-red);
       :after {
         content: " ";
         position: absolute;
@@ -27,7 +25,7 @@ export const TickersSection = styled.section`
         top: 0;
         left: 0;
         z-index: -1;
-        background: #ff0000;
+        background: var(--light-red);
         transform-origin: 0% 100%;
         -ms-transform: skew(-25deg, 0deg);
         -webkit-transform: skew(-25deg, 0deg);
@@ -53,15 +51,15 @@ export const TickersBlock = styled.div`
   min-width: 1020px;
   height: 120px;
   border-radius: 7px;
-  background: #acb4b991; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #2c3e50,
-    #acb4b991
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #2c3e50,
-    #acb4b991
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #acb4b991;
+  background: -webkit-linear-gradient(to left, #2c3e50, #acb4b991);
+  background: linear-gradient(to left, #2c3e50, #acb4b991);
+
+  @media (max-width: 1024px) {
+    min-width: 760px;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 480px;
+  }
 `;

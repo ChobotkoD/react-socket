@@ -1,4 +1,4 @@
-import "./style.css";
+import {GlobalStyle} from './globalStyles'
 import React from "react";
 import ReactDOM from "react-dom";
 import {App} from "./app";
@@ -8,4 +8,5 @@ import { store } from "./store/index"
 ReactDOM.render(
 <Provider store={store}>
     <App />
+    <GlobalStyle />
 </Provider>, document.querySelector("#root"));

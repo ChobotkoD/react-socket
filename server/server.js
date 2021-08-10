@@ -22,14 +22,7 @@ function randomValue(min = 0, max = 1, precision = 0) {
 
 function utcDate() {
   const now = new Date();
-  return new Date(
-    now.getUTCFullYear(),
-    now.getUTCMonth(),
-    now.getUTCDate(),
-    now.getUTCHours(),
-    now.getUTCMinutes(),
-    now.getUTCSeconds()
-  );
+  return `${now.getDate()}.0${now.getMonth() + 1}.${now.getFullYear()}`;
 }
 
 function getQuotes(socket) {

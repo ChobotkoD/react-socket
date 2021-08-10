@@ -1,8 +1,3 @@
-
-
-
-
-
 export interface ITickers {
     ticker:         string;
     exchange:        string;

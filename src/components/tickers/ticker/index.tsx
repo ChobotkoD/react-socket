@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react'
 import {TickerContainer, TickerPrice, IconUp, IconDown} from './TickerElements'
-
 import { ITickers } from '../../../types'
 
 
 
 export const Ticker = ({ticker, exchange, price, change, change_percent, dividend, yieldNum, last_trade_time}:ITickers) => {
    const [tick, setTick] = useState<boolean>(true)
-    
     
     const usePrevious = (value: number) => {
         const ref:{current: number | undefined} = useRef();
@@ -34,7 +32,7 @@ return (
         <span>{tick && last_trade_time}</span>   
         <span className ="switch-toggle">
             <input type="checkbox" id={ticker} onChange={()=>setTick(prev=> !prev)}/>
-            <label htmlFor={ticker}></label>
+            <label aria-label='button-switch-on-off' title='switch-btn' htmlFor={ticker}></label>
         </span>
     </TickerContainer>
     )

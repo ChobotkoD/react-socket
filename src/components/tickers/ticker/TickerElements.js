@@ -3,11 +3,18 @@ import { MdTrendingUp, MdTrendingDown } from "react-icons/md";
 
 export const TickerContainer = styled.article`
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr 1fr 4fr 2fr;
+  grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
   column-gap: 10px;
   grid-column: 2/3;
   text-align: center;
   height: 20px;
+
+  @media (max-width: 768px) {
+    column-gap: 1px;
+    span {
+      font-size: 0.7em;
+    }
+  }
 
   .switch-toggle input[type="checkbox"] {
     position: absolute;
@@ -27,15 +34,15 @@ export const TickerContainer = styled.article`
   .switch-toggle input[type="checkbox"] + label::before {
     position: absolute;
     content: "ON";
-    font-size: 10px;
+    font-size: 8px;
     text-align: center;
     line-height: 15px;
-    top: -11px;
+    top: -8px;
     left: 8px;
     width: 35px;
     height: 14px;
     border-radius: 20px;
-    background-color: #00b33c;
+    background-color: var(--light-green);
     transition: 0.3s ease-in-out;
   }
 
@@ -50,9 +57,9 @@ export const TickerContainer = styled.article`
 export const TickerPrice = styled.div``;
 
 export const IconUp = styled(MdTrendingUp)`
-  color: #5dbf1d;
+  color: var(--light-green);
 `;
 
 export const IconDown = styled(MdTrendingDown)`
-  color: #e64900;
+  color: var(--light-red);
 `;
