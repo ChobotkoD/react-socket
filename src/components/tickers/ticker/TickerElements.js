@@ -37,13 +37,17 @@ export const TickerContainer = styled.article`
     font-size: 8px;
     text-align: center;
     line-height: 15px;
-    top: -8px;
+    top: -11px;
     left: 8px;
     width: 35px;
     height: 14px;
     border-radius: 20px;
     background-color: var(--light-green);
     transition: 0.3s ease-in-out;
+
+    @media (max-width: 768px) {
+      top: -8px;
+    }
   }
 
   .switch-toggle input[type="checkbox"]:checked + label::before {
